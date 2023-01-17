@@ -3,7 +3,13 @@ import { todoAppMachine } from "../machines/todoAppMachine";
 
 
 export default function Home() {
-  const [state, send] = useMachine(todoAppMachine);
+  const [state, send] = useMachine(todoAppMachine, {
+    services: {
+      loadTodos: async () => {
+        return ["Take bins out", "Do laundry"]
+      }
+    }
+  });
 
   return (
     <>

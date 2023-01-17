@@ -5,19 +5,21 @@ export interface Typegen0 {
   internalEvents: {
     "xstate.init": { type: "xstate.init" };
   };
-  invokeSrcNameMap: {};
+  invokeSrcNameMap: {
+    LoadTodos: "done.invoke.Todo App Machine.Loading Todos:invocation[0]";
+  };
   missingImplementations: {
     actions: never;
     delays: never;
     guards: never;
-    services: never;
+    services: "LoadTodos";
   };
-  eventsCausingActions: {
-    consoleLogTodos: "TODO_LOADED";
-  };
+  eventsCausingActions: {};
   eventsCausingDelays: {};
   eventsCausingGuards: {};
-  eventsCausingServices: {};
+  eventsCausingServices: {
+    LoadTodos: "xstate.init";
+  };
   matchesStates: "Loading Todo Errored" | "Loading Todos" | "Todos Loaded";
   tags: never;
 }
